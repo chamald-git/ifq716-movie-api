@@ -1,0 +1,8 @@
+node_modules/
+.env
+*.log
+res/posters/*.png
+!res/posters/.gitkeep
+certs/*.pem
+certs/*.key
+.DS_Store

@@ -1,0 +1,28 @@
+{
+  "name": "movie-api",
+  "version": "1.0.0",
+  "description": "IFQ716 A2 - Movie Information API (Node + Express + MySQL)",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "cert": "node scripts/generate-cert.js"
+  },
+  "keywords": [],
+  "author": "Chamal Dissanayake (n12765864)",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "knex": "^3.3.0",
+    "mysql2": "^3.22.6"
+  },
+  "devDependencies": {
+    "selfsigned": "^5.5.0"
+  }
+}
