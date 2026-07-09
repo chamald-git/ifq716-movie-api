@@ -13,16 +13,20 @@ function required(name) {
   return value.trim();
 }
 
+const env = process.env.NODE_ENV || 'development';
+const isProduction = env === 'production';
+
 export const config = {
-  env: process.env.NODE_ENV || 'development',
+  env,
   port: Number(process.env.PORT) || 5000,
 
   db: {
     host: process.env.DB_HOST || '127.0.0.1',
     port: Number(process.env.DB_PORT) || 3306,
-    user: required('DB_USER'),
-    password: required('DB_PASSWORD'),
-    database: required('DB_NAME'),
+    user: isProduction ? process.env.DB_USER : required('DB_USER'),
+    password: isProduction ? process.env.DB_PASSWORD : required('DB_PASSWORD'),
+    database: isProduction ? process.env.DB_NAME : required('DB_NAME'),
+    databaseUrl: isProduction ? required('DATABASE_URL') : process.env.DATABASE_URL,
   },
 
   jwt: {
